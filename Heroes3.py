@@ -92,7 +92,7 @@ class Heroes3Maps():
     Examples
     --------        
     >>> from Heroes3 import Heroes3Maps
-    >>> initializer = Heroes3Maps(no_maps=1,mods=[1,2,3],no_teams=1,no_humans=1)
+    >>> initializer = Heroes3Maps(no_maps=1,mods=[1,2,3],no_teams=2,no_humans=2)
     >>> initializer.downloader('/Users/downloads/')
 
     This example will download 1 map (the first map the parser finds that 
@@ -159,7 +159,7 @@ class Heroes3Maps():
                     maps = soup.find_all('tr')[j].find_all('td')[0].find_all('b')[1].contents
                     map_name = soup.find_all('tr')[j].find_all('td')[0].find_all('b')[0].contents
                     if maps[0] in playables:
-                        print(maps)
+                        print('Mod: ',maps[0],' - Map Name: ',map_name[0])
                         for i in soup.find_all('tr')[j].find_all('td')[3].contents:
                             if 'Size' in i:
                                 sz = i[8:]
@@ -169,7 +169,7 @@ class Heroes3Maps():
                                 print("Can be Human {0}".format(cbh))
                             if 'Team' in i:
                                 teams = int(self.numbers.findall(i)[0])
-                                print("Teams {0}".format(teams))
+                                print("Teams {0}\n".format(teams))
                             if 'Players' in i:
                                 players = int(self.numbers.findall(i)[0])
                                 print("Players {0}".format(players))
