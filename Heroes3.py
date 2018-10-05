@@ -188,6 +188,10 @@ class Heroes3Maps():
         return dwnl
     
     def downloader(self,dwnl_dir):
+        """
+        Taks the maps that are found eligible for download in conditions() as input and
+        downloads them to the directory specified in dwnl_dir in this function
+        """
         if os.path.exists(dwnl_dir) == False:
             raise FileNotFoundError("Can't find such directory : {0}, try '/' instead of '\\' as seperators".format(dwnl_dir))
         eligibles = self.conditions()
