@@ -113,6 +113,9 @@ class Heroes3Maps():
         self.numbers = re.compile(r'\b(?:[0-9])\b')
     
     def parser(self,pg):
+        """ 
+        Parses the website one page with 10 maps on each page at the time
+        """
         base = 'http://www.maps4heroes.com/heroes3/maps.php?&limit='    
         page = str(pg)
         domain = urlopen(base + page)
@@ -121,6 +124,12 @@ class Heroes3Maps():
     
         
     def conditions(self):
+        """
+        Takes parsed webpages from parser(self,pg) as input and scrapes each page of maps 
+        to save maps that fulfills the specified conditions from __init__() until it either
+        reaches the last page or until it has found the number of maps specified in self.no_maps
+        that are eligible for download.
+        """
         dwnl = [[],[]]
          
         moderations = {'1':'Heroes 3 The Shadow of Death','2':"Heroes 3 Armageddon's Blade",
