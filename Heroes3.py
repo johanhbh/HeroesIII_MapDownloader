@@ -154,7 +154,7 @@ class Heroes3Maps():
                 break
     
             for j in range(len(soup.find_all('tr'))):
-                teams,cbh = 0,0
+                teams,cbh,sz,players = 0,0,0,0
                 try:
                     maps = soup.find_all('tr')[j].find_all('td')[0].find_all('b')[1].contents
                     map_name = soup.find_all('tr')[j].find_all('td')[0].find_all('b')[0].contents
