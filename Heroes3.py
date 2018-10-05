@@ -12,14 +12,15 @@ import re,os,math
 class Heroes3Maps():
     """ Heroes of Might and Magic III (HMM3)
     
-    API to download HMM3 maps from the http://www.maps4heroes.com webpage
+    
+    to download HMM3 maps from the http://www.maps4heroes.com webpage
     
     It uses webscraping to go through all pages containing maps and reads
     the maps' types and specs, such as Can be Human, Teams etc. Then the API 
     can save maps that fulfills specifications made by the user, to facilitate
     eager HMM3 gamers' search for specific games.
     
-    Lastly the API donwloads the maps found from the scraping using urllib's
+    Lastly the script donwloads the maps found from the scraping using urllib's
     request.urlretrieve to donwload them the directory specified with it's 
     path by the user. 
     
